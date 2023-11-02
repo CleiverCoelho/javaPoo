@@ -1,10 +1,15 @@
 package com.cleiver.poo.jogodavelha;
 public class JogoDaVelha {
-
-    int tamanhoLinha = 3;
-    int tamanhoColuna = 3;
-    char[][] jogoVelha = new char[tamanhoLinha][tamanhoColuna];
-    int jogada = 1;
+    int tamanhoLinha;
+    int tamanhoColuna;
+    char[][] jogoVelha;
+    int jogada;
+    JogoDaVelha () {
+        tamanhoLinha = 3;
+        tamanhoColuna = 3;
+        jogoVelha = new char[tamanhoLinha][tamanhoColuna];
+        jogada = 1;
+    }
 
     boolean validarJogada(int linha, int coluna, char sinal) {
 
