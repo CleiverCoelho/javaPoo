@@ -1,17 +1,35 @@
 package com.cleiver.poo.jogodavelha;
 public class JogoDaVelha {
-    int tamanhoLinha;
-    int tamanhoColuna;
-    char[][] jogoVelha;
-    int jogada;
-    JogoDaVelha () {
-        tamanhoLinha = 3;
-        tamanhoColuna = 3;
-        jogoVelha = new char[tamanhoLinha][tamanhoColuna];
-        jogada = 1;
+    private int tamanhoLinha;
+    private int tamanhoColuna;
+    private char[][] jogoVelha;
+    private int jogada;
+    public JogoDaVelha (int tamanhoLinha, int tamanhoColuna) {
+        this.tamanhoLinha = tamanhoLinha;
+        this.tamanhoColuna = tamanhoColuna;
+        this.jogoVelha = new char[tamanhoLinha][tamanhoColuna];
+        this.jogada = 1;
     }
 
-    boolean validarJogada(int linha, int coluna, char sinal) {
+    public JogoDaVelha() {}
+
+    public int getTamanhoLinha() {
+        return  this.tamanhoLinha;
+    }
+
+    public int getTamanhoColuna() {
+        return  this.tamanhoColuna;
+    }
+
+    public int getJogada() {
+        return  this.jogada;
+    }
+
+
+    public char[][] getJogoVelha() {
+        return  this.jogoVelha;
+    }
+    public boolean validarJogada(int linha, int coluna, char sinal) {
 
         if (!(jogoVelha[linha][coluna] == 'X' || jogoVelha[linha][coluna] == 'O')) {
             jogoVelha[linha][coluna] = sinal;
@@ -22,7 +40,7 @@ public class JogoDaVelha {
         }
     }
 
-    void imprimirTabuleiro() {
+    public void imprimirTabuleiro() {
         for (int i = 0; i < tamanhoLinha; i++) {
             for (int j = 0; j < tamanhoColuna; j++) {
                 System.out.print(jogoVelha[i][j] + " | ");
@@ -31,7 +49,7 @@ public class JogoDaVelha {
         }
     }
 
-    boolean verificarGanhador(char sinal) {
+    public boolean verificarGanhador(char sinal) {
         if ((jogoVelha[0][0] == sinal && jogoVelha[0][1] == sinal && jogoVelha[0][2] == sinal) || //linha 1
                 (jogoVelha[1][0] == sinal && jogoVelha[1][1] == sinal && jogoVelha[1][2] == sinal) || //linha 2
                 (jogoVelha[2][0] == sinal && jogoVelha[2][1] == sinal && jogoVelha[2][2] == sinal) || //linha 3
@@ -45,7 +63,7 @@ public class JogoDaVelha {
         return false;
     }
 
-    char vezDoJogador(){
+    public char vezDoJogador(){
         if (jogada % 2 == 1){
             System.out.println("Vez do jogador 1. Escolha linha e coluna (1-3).");
             return 'X';

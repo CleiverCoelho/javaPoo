@@ -7,7 +7,7 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
 
-        JogoDaVelha jogoDaVelha = new JogoDaVelha();
+        JogoDaVelha jogoDaVelha = new JogoDaVelha(3, 3);
 
         System.out.println("Jogador 1 = X");
         System.out.println("Jogador 2 = O");
