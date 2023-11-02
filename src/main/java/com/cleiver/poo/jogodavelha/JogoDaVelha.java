@@ -1,7 +1,9 @@
 package com.cleiver.poo.jogodavelha;
 public class JogoDaVelha {
 
-    char[][] jogoVelha = new char[3][3];
+    int tamanhoLinha = 3;
+    int tamanhoColuna = 3;
+    char[][] jogoVelha = new char[tamanhoLinha][tamanhoColuna];
     int jogada = 1;
 
     boolean validarJogada(int linha, int coluna, char sinal) {
@@ -16,8 +18,8 @@ public class JogoDaVelha {
     }
 
     void imprimirTabuleiro() {
-        for (int i = 0; i < jogoVelha.length; i++) {
-            for (int j = 0; j < jogoVelha[i].length; j++) {
+        for (int i = 0; i < tamanhoLinha; i++) {
+            for (int j = 0; j < tamanhoColuna; j++) {
                 System.out.print(jogoVelha[i][j] + " | ");
             }
             System.out.println();
