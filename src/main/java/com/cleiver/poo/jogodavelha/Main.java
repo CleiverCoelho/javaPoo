@@ -36,7 +36,7 @@ public class Main {
             } else if (jogoDaVelha.verificarGanhador('O')){
                 ganhou = true;
                 System.out.println("Parabéns, jogador 2 ganhou!");
-            } else if (jogoDaVelha.jogada > 9){
+            } else if (jogoDaVelha.getJogada() > 9){
                 ganhou = true;
                 System.out.println("Ninguém ganhou essa partida.");
             }
